@@ -1,3 +1,4 @@
+```java name=src/main/java/dev/iseal/powergems/gems/AirGem.java
 package dev.iseal.powergems.gems;
 
 import dev.iseal.powergems.PowerGems;
@@ -103,19 +104,7 @@ public class AirGem extends Gem {
                     });
     }
 
-    @Override
-    protected void shiftClick(Player plr, int level) {
-        double distance = 6 * (level / 2.0);
-        Location location = plr.getLocation();
-        Vector direction = location.getDirection().normalize();
-        AreaEffectCloud effect = (AreaEffectCloud) plr.getWorld().spawnEntity(location, EntityType.AREA_EFFECT_CLOUD);
-        effect.setDuration(60);
-        effect.setRadius(1.0f);
-        effect.setParticle(Particle.SMOKE_LARGE);
-        effect.setColor(Color.BLACK);
-        plr.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 100, 0));
-        plr.setVelocity(direction.multiply(distance));
-    }
+    // Removed shiftClick ability as requested
 
     @Override
     public ArrayList<String> getDefaultLore() {
@@ -124,8 +113,7 @@ public class AirGem extends Gem {
         lore.add(ChatColor.GREEN + "Abilities");
         lore.add(ChatColor.WHITE
                 + "Right click: Creates a tether of wind between the player and a target player, pulling the target closer.");
-        lore.add(ChatColor.WHITE
-                + "Shift click: Creates a cloud of smoke, granting temporary invisibility and propelling the player forward.");
+        // Removed shift click lore line
         lore.add(ChatColor.WHITE
                 + "Left click: Unleashes a burst of wind, launching nearby entities into the air and dealing damage.");
         return lore;
