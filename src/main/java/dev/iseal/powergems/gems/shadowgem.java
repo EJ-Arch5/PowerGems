@@ -20,7 +20,8 @@ import org.bukkit.potion.PotionEffectType;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class shadowGem extends Gem {
+public class shadowGem extends Gem { super("Shadow");
+    }
     private final FallingBlockHitListener fbhl = sm.fallingBlockHitListen;// Check if the player is holding the Shadow Gem and is sneaking.
 // An event listener will check for PlayerToggleSneakEvent.
 @EventHandler
