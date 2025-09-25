@@ -1,4 +1,27 @@
-// Check if the player is holding the Shadow Gem and is sneaking.
+
+package dev.iseal.powergems.gems;
+
+import dev.iseal.powergems.PowerGems;
+import dev.iseal.powergems.listeners.AvoidTargetListener;
+import dev.iseal.powergems.listeners.FallingBlockHitListener;
+import dev.iseal.powergems.misc.AbstractClasses.Gem;
+import dev.iseal.sealLib.Systems.I18N.I18N;
+import dev.iseal.sealLib.Utils.SpigotGlobalUtils;
+import org.bukkit.*;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.entity.*;
+import org.bukkit.event.block.Action;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class shadowGem extends Gem {
+    private final FallingBlockHitListener fbhl = sm.fallingBlockHitListen;// Check if the player is holding the Shadow Gem and is sneaking.
 // An event listener will check for PlayerToggleSneakEvent.
 @EventHandler
 public void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
